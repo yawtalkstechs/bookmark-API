@@ -1,6 +1,6 @@
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from .views import user_login, dashboard
+from .views import user_login, dashboard, register, edit
 
 
 urlpatterns = [
@@ -10,6 +10,8 @@ urlpatterns = [
 
     path("", include("django.contrib.auth.urls")),
     path("", dashboard, name="dashboard"),
+    path("register/", register, name="register"),
+    path("edit/", edit, name="edit"),
 
     # Password change
     # path("password-change/", auth_views.PasswordChangeView.as_view(), 
